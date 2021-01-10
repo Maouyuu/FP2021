@@ -1,0 +1,16 @@
+
+-- Je n'ai travaillé que avec le machineId 33 (36 et 50 aussi marchent)
+    + car 36 manque certaines variables
+    + 50 ne contient pas tous les LogNumber
+
+-- Je n'ai analysé que le premier csv (le deuxieme ne contient pas toutes les billes)
+
+-- pour un même LogNumber, les valeurs pour un MachineId de 36 et 33 sont légèrement différentes, alors que pour 50 c'est complètement différent aux
+ deux autres
+
+----------------------------------------------------------------------------------------------------------------------------------------------
+
+-- j'ai pris les LogNumber avec une erreur de rotation dans le fichier 2 capturée par le capteur 63, et récupéré leurs caractéristiques dans
+ le premier fichier par le capteur 33
+
+ -- 2020-12-09_Interim_Shift_Rapport_PGLR.csv n'existe pas

@@ -42,14 +42,27 @@ data.shape
 
 data.to_csv("C:\\Users\\Ilyas\\Desktop\\projetFP\\clean-données\\" + "2020-12-01_jour.csv")
 
+
 # Consolider toutes les bases de données
 PATH2 = r"C:\Users\Ilyas\Desktop\projetFP\clean-données"
 files = [f for f in listdir(PATH2)]
-
 data = pd.concat([pd.read_csv(join(PATH2, file)) for file in files], ignore_index=True)
-
 data.shape
 
 # variables
+nan_cols = ['StemId', 'BinId', 'Crew', 'AcousticVelocity', 'VelocityClass', 'DestinationName']
+data.drop(columns=nan_cols, inplace=True)
 vars = data.columns
-list(map(lambda x: len(set(list(data[x]))), vars))
+for var in vars:
+    print(var + '\t' + str(len(set(data[var]))))
+one_value_cols = ['MachineId', 'SpeciesName', 'IsMetric', 'ForceTerm', 'IsSimulation',
+                  'ChipValue', 'SawdustValue', 'NaturalFreq', 'Confidence', 'Harmonic', 'CurveDeflection']
+
+# Data Cleaning
+PATH2 = r"C:\Users\Ilyas\Desktop\projetFP\clean-données"
+files = [f for f in listdir(PATH2)]
+data = pd.concat([pd.read_csv(join(PATH2, file)) for file in files], ignore_index=True)
+data.drop(columns=nan_cols + one_value_cols, inplace=True)
+
+# TO DO
+# Analyse explorative des données
